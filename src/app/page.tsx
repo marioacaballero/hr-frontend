@@ -1,4 +1,3 @@
-import Image from "next/image";
 import JobSearch from "./components/job-search/JobSearch";
 import Comunity from "./components/comunity/Comunity";
 import Opinions from "./components/opinions/Opinions";
