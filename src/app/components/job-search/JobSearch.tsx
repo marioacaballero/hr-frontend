@@ -5,7 +5,7 @@ import logo from "../../../../public/next.svg";
 
 function JobSearch() {
   return (
-    <div className="mt-14 flex py-10">
+    <div className="mb-10 mt-14 flex py-10">
       <div className="flex w-1/2 flex-col items-center justify-center gap-10">
         <h2 className="mb-6 w-full pl-8 text-left text-3xl font-medium">
           Encontrar está reservado para aquellos que buscan
