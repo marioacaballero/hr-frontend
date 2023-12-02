@@ -6,7 +6,7 @@ import logo from "../../../public/next.svg";
 
 function Navbar() {
   return (
-    <nav className="flex h-32 w-screen justify-between bg-white shadow-md shadow-gray-400">
+    <nav className="flex h-32 w-screen justify-between border-b border-gray-400 bg-white shadow-inner shadow-black">
       <Image alt="logo" src={logo} width={150} height={100} className="ml-12" />
       <div className="flex w-2/4 items-center justify-start gap-5 pl-2">
         <Link
