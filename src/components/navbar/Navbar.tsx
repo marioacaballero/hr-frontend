@@ -1,10 +1,20 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { PiPersonSimpleDuotone } from "react-icons/pi";
 import logo from "../../../public/next.svg";
 
 function Navbar() {
+  const router = useRouter();
+
+  const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    if (e.target.value === "") return;
+    router.push(`/singup/${e.target.value}`);
+  };
+
   return (
     <nav className="flex h-32 w-screen justify-between border-b border-gray-400 bg-white shadow-inner shadow-black">
       <Image alt="logo" src={logo} width={150} height={100} className="ml-12" />
@@ -35,12 +45,15 @@ function Navbar() {
         >
           Iniciar sesión
         </Link>
-        <select className="w-44 rounded-lg  border-green-100 bg-green-100 p-3 text-center">
+        <select
+          onChange={(e) => onChange(e)}
+          className="w-44 rounded-lg  border-green-100 bg-green-100 p-3 text-center"
+        >
           <option value="">Registrate</option>
-          <option value="">Postulante</option>
-          <option value="">Freelance</option>
-          <option value="">Empresa</option>
-          <option value="">ONG</option>
+          <option value="user">Postulante</option>
+          <option value="user">Freelance</option>
+          <option value="company">Empresa</option>
+          <option value="company">ONG</option>
         </select>
         <Link
           href="/"
