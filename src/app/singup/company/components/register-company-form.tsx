@@ -225,14 +225,17 @@ export default function FormCompany() {
       <section className="flex w-full flex-col items-center justify-center">
         <button
           type="submit"
-          className="w-44 rounded-lg  border-green-100 bg-green-100 p-3 text-center font-semibold uppercase"
+          className="w-44 rounded-lg  border-green-100 bg-green-100 p-3 text-center font-semibold uppercase duration-500 hover:bg-green-300"
           onClick={(e) => termsValidation(e)}
         >
           Crear Cuenta
         </button>
         <div className="flex gap-2 py-10 text-gray-600">
           <span>¿Ya tienes cuenta?</span>
-          <Link href="/login" className="font-semibold">
+          <Link
+            href="/login"
+            className="font-semibold duration-200 hover:scale-105"
+          >
             Ingresa
           </Link>
         </div>
