@@ -4,9 +4,22 @@ import Link from "next/link";
 import Image from "next/image";
 import { RegisterCompany } from "../lib/actions-create-company";
 import formImage from "../../../../../public/form.png";
-import { passwordValidation, termsValidation } from "../../utils/validations";
+import {
+  emailValidation,
+  passwordValidation,
+  termsValidation,
+} from "../../utils/validations";
 
-export default function FormCompany() {
+type activityareas = {
+  name: string;
+  id: number;
+};
+
+export default function FormCompany({
+  activityareas,
+}: {
+  activityareas: activityareas[];
+}) {
   return (
     <form action={RegisterCompany} className="relative bg-white p-16">
       <Image
@@ -52,6 +65,7 @@ export default function FormCompany() {
               name="email"
               placeholder="Email"
               className="rounded-lg border border-gray-500 p-3"
+              onChange={(e) => emailValidation(e)}
             />
             <span className="pt-2 text-sm">
               A este mail se enviaran las facturas
@@ -112,9 +126,11 @@ export default function FormCompany() {
               className="rounded-lg border border-gray-500 bg-white p-3"
               name="activityArea"
             >
-              <option value="1">Areas de actividad</option>
-              <option value="2">Areas de actividad</option>
-              <option value="3">Areas de actividad</option>
+              {activityareas.map((area) => (
+                <option key={area.id} value={area.id}>
+                  {area.name}
+                </option>
+              ))}
             </select>
           </label>
         </div>

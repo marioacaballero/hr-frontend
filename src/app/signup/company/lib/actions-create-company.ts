@@ -1,5 +1,8 @@
 "use server";
 
+import { apiurl } from "@/app/utils/config-url";
+import axios from "axios";
+
 export async function RegisterCompany(company: FormData) {
   const rawCompanyData = Object.fromEntries(company.entries());
 
@@ -17,7 +20,10 @@ export async function RegisterCompany(company: FormData) {
     postalCode,
     phonePref,
     phoneNum,
+    socialMedia,
+    web,
     integration,
+    news,
     isONG,
   } = rawCompanyData;
 
@@ -28,15 +34,23 @@ export async function RegisterCompany(company: FormData) {
     password,
     name,
     bussinessName,
-    activityArea: { id: activityArea },
+    activityArea: { id: +activityArea },
     fiscalCondition,
     IDnumber,
     cityAndCountry,
     postalCode,
     phone: `${phonePref}${phoneNum}`,
+    socialMedia,
+    web,
     integration: integration === "on",
+    news: news === "on",
     isONG: isONG === "on",
   };
 
   console.log("RegisterCompany", newCompany);
+  try {
+    await axios.post(`${apiurl}/auth/register-company`, newCompany);
+  } catch (error: any) {
+    console.log(error.response.data);
+  }
 }

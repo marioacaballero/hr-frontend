@@ -7,6 +7,10 @@ export const passwordValidation = (e: React.ChangeEvent<HTMLInputElement>) => {
   )[0] as HTMLInputElement;
   if (password.value !== passwordValidation.value) {
     passwordValidation.setCustomValidity("Las contraseñas no coinciden");
+  } else if (password.value.length < 6) {
+    password.setCustomValidity(
+      "La contraseña debe tener al menos 6 caracteres",
+    );
   } else {
     passwordValidation.setCustomValidity("");
   }
@@ -20,5 +24,14 @@ export const termsValidation = (
     terms.setCustomValidity("Debes aceptar los terminos y condiciones");
   } else {
     terms.setCustomValidity("");
+  }
+};
+
+export const emailValidation = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const email = document.getElementsByName("email")[0] as HTMLInputElement;
+  if (email.validity.typeMismatch) {
+    email.setCustomValidity("El email no es válido");
+  } else {
+    email.setCustomValidity("");
   }
 };
