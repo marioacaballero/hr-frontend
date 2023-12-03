@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { RegisterCompany } from "../lib/actions-create-company";
 import formImage from "../../../../../public/form.png";
-import { passwordValidation, termsValidation } from "../utils/validations";
+import { passwordValidation, termsValidation } from "../../utils/validations";
 
 export default function FormCompany() {
   return (
