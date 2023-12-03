@@ -172,7 +172,7 @@ export default function FormCompany() {
         <div className="flex gap-8">
           <label className="flex flex-col gap-1">
             Teléfono celular *
-            <div className="flex gap-8">
+            <div className="flex gap-2">
               <select
                 className="rounded-lg border border-gray-500 bg-white p-3"
                 name="phonePref"
@@ -192,13 +192,13 @@ export default function FormCompany() {
                 type="text"
                 name="socialMedia"
                 placeholder="Perfil de red social"
-                className="rounded-lg border border-gray-500 p-3"
+                className="ml-6 rounded-lg border border-gray-500 p-3"
               />
               <input
                 type="text"
                 name="web"
                 placeholder="Página web"
-                className="rounded-lg border border-gray-500 p-3"
+                className="ml-6 rounded-lg border border-gray-500 p-3"
               />
             </div>
           </label>
