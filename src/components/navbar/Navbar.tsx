@@ -12,7 +12,7 @@ function Navbar() {
 
   const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value === "") return;
-    router.push(`/singup/${e.target.value}`);
+    router.push(`/signup/${e.target.value}`);
   };
 
   return (
@@ -51,8 +51,8 @@ function Navbar() {
         >
           <option value="">Registrate</option>
           <option value="user">Postulante</option>
-          <option value="user">Freelance</option>
           <option value="company">Empresa</option>
+          <option value="user">Freelance</option>
           <option value="company">ONG</option>
         </select>
         <Link
