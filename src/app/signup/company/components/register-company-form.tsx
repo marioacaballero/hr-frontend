@@ -9,7 +9,11 @@ import { passwordValidation, termsValidation } from "../../utils/validations";
 export default function FormCompany() {
   return (
     <form action={RegisterCompany} className="relative bg-white p-16">
-      <Image alt="fomr" src={formImage} className="absolute right-10 top-40" />
+      <Image
+        alt="fomr"
+        src={formImage}
+        className="absolute right-10 top-40 z-0"
+      />
       <h1 className="py-10 text-3xl font-bold">
         Registra tu organización con nosotros
       </h1>
@@ -19,8 +23,8 @@ export default function FormCompany() {
       <span className="p-3 text-gray-600">
         Los campos con * son obligatorios
       </span>
-      <section className="flex flex-col gap-6 py-10 text-lg text-gray-600">
-        <div className="flex gap-8">
+      <section className="flex flex-col gap-12 py-10 text-lg text-gray-600">
+        <div className="z-10 flex gap-8">
           <label className="flex flex-col gap-1">
             Nombre *
             <input
@@ -40,7 +44,7 @@ export default function FormCompany() {
             />
           </label>
         </div>
-        <div className="flex gap-8">
+        <div className="z-10 flex gap-8">
           <label className="flex flex-col gap-1">
             Email *
             <input
@@ -79,7 +83,7 @@ export default function FormCompany() {
           </label>
         </div>
       </section>
-      <section className="flex flex-col gap-6 py-10 text-lg text-gray-600">
+      <section className="flex flex-col gap-12 py-10 text-lg text-gray-600">
         <h2 className="py-5 text-xl font-semibold">
           Completa la información de tu organización
         </h2>
@@ -165,7 +169,7 @@ export default function FormCompany() {
               type="text"
               name="postalCode"
               placeholder="Cod postal"
-              className="rounded-lg border border-gray-500 p-3"
+              className="w-36 rounded-lg border border-gray-500 p-3"
             />
           </label>
         </div>
@@ -186,7 +190,7 @@ export default function FormCompany() {
                 type="tel"
                 name="phoneNum"
                 placeholder="Ej. 1156329815"
-                className="rounded-lg border border-gray-500 p-3"
+                className="w-48 rounded-lg border border-gray-500 p-3"
               />
               <input
                 type="text"
