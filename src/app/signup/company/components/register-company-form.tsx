@@ -9,10 +9,15 @@ import {
   passwordValidation,
   termsValidation,
 } from "../../utils/validations";
+import { useFormState } from "react-dom";
 
 type activityareas = {
   name: string;
   id: number;
+};
+
+const initialState = {
+  message: null,
 };
 
 export default function FormCompany({
@@ -20,8 +25,9 @@ export default function FormCompany({
 }: {
   activityareas: activityareas[];
 }) {
+  const [state, formAction] = useFormState(RegisterCompany, initialState);
   return (
-    <form action={RegisterCompany} className="relative bg-white p-16">
+    <form action={formAction} className="relative bg-white p-16">
       <Image
         alt="fomr"
         src={formImage}
@@ -65,7 +71,7 @@ export default function FormCompany({
               name="email"
               placeholder="Email"
               className="rounded-lg border border-gray-500 p-3"
-              onChange={(e) => emailValidation(e)}
+              // onChange={(e) => emailValidation(e)}
             />
             <span className="pt-2 text-sm">
               A este mail se enviaran las facturas
@@ -250,6 +256,9 @@ export default function FormCompany({
         >
           Crear Cuenta
         </button>
+        <p aria-live="polite" className="text-red-500">
+          {state?.message}
+        </p>
         <div className="flex gap-2 py-10 text-gray-600">
           <span>¿Ya tienes cuenta?</span>
           <Link

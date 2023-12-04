@@ -9,7 +9,7 @@ export const passwordValidation = (e: React.ChangeEvent<HTMLInputElement>) => {
     passwordValidation.setCustomValidity("Las contraseñas no coinciden");
   } else if (password.value.length < 6) {
     password.setCustomValidity(
-      "La contraseña debe tener al menos 6 caracteres",
+      `La contraseña debe tener al menos 6 caracteres ${password.value.length}`,
     );
   } else {
     passwordValidation.setCustomValidity("");
