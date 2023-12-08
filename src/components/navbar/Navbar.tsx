@@ -3,12 +3,13 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { PiPersonSimpleDuotone } from "react-icons/pi";
 import logo from "../../../public/next.svg";
 
 function Navbar() {
   const router = useRouter();
+  const pathName = usePathname();
 
   const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     if (e.target.value === "") return;
@@ -21,19 +22,28 @@ function Navbar() {
       <div className="flex w-2/4 items-center justify-start gap-5 pl-2">
         <Link
           href="/about"
-          className="w-48 rounded-lg border border-gray-400 p-2 text-center"
+          className="w-48 rounded-lg border border-gray-400 p-2 text-center duration-500 hover:bg-lime-100"
+          style={{
+            backgroundColor: pathName === "/about" ? "rgb(217 249 157)" : "",
+          }}
         >
           ¿Quiénes somos?
         </Link>
         <Link
           href="/jobs"
-          className="w-48 rounded-lg border border-gray-400 p-2 text-center"
+          className="w-48 rounded-lg border border-gray-400 p-2 text-center duration-500 hover:bg-lime-100"
+          style={{
+            backgroundColor: pathName === "/jobs" ? "rgb(217 249 157)" : "",
+          }}
         >
           Buscar empleo
         </Link>
         <Link
           href="/"
-          className="w-48 rounded-lg border border-gray-400 p-2 text-center"
+          className="w-48 rounded-lg border border-gray-400 p-2 text-center duration-500 hover:bg-lime-100"
+          style={{
+            backgroundColor: pathName === "/publish" ? "rgb(217 249 157)" : "",
+          }}
         >
           Publica tu aviso
         </Link>
@@ -41,13 +51,13 @@ function Navbar() {
       <div className="flex w-2/6 items-center justify-start gap-6">
         <Link
           href="/"
-          className="w-36 rounded-lg border border-gray-400 p-3 text-center "
+          className="w-36 rounded-lg border border-gray-400 p-3 text-center duration-500 hover:bg-lime-100"
         >
           Iniciar sesión
         </Link>
         <select
           onChange={(e) => onChange(e)}
-          className="w-44 rounded-lg  border-green-100 bg-green-100 p-3 text-center"
+          className="w-44 rounded-lg bg-lime-100 p-3 text-center"
         >
           <option value="">Registrate</option>
           <option value="user">Postulante</option>
