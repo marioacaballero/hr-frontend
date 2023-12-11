@@ -63,7 +63,7 @@ function Navbar() {
           <option value="user">Postulante</option>
           <option value="company">Empresa</option>
           <option value="user">Freelance</option>
-          <option value="company">ONG</option>
+          <option value="company">ONG / Organizaciones a fines</option>
         </select>
         <Link
           href="/"

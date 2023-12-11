@@ -7,8 +7,8 @@ function JobSearch() {
   return (
     <div className="mb-10 mt-14 flex py-10">
       <div className="flex w-1/2 flex-col items-center justify-center gap-10">
-        <h2 className="mb-6 w-full pl-8 text-left text-3xl font-medium">
-          Encontrar está reservado para aquellos que buscan
+        <h2 className="mb-6 w-full pl-8 text-center text-3xl font-medium">
+          Encontrar está reservado <br /> para aquellos que buscan
         </h2>
         <label className="flex w-2/3 items-center justify-start gap-4 rounded-lg border border-gray-300 bg-white p-2">
           <BiSearchAlt2 className="ml-4 text-2xl" />
