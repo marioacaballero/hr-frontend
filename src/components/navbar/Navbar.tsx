@@ -50,7 +50,7 @@ function Navbar() {
       </div>
       <div className="flex w-2/6 items-center justify-start gap-6">
         <Link
-          href="/"
+          href="/signin"
           className="w-36 rounded-lg border border-gray-400 p-3 text-center duration-500 hover:bg-lime-100"
         >
           Iniciar sesión
