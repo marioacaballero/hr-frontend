@@ -1,11 +1,11 @@
 import Image from "next/image";
 import React from "react";
 import { BiSearchAlt2, BiMap } from "react-icons/bi";
-import logo from "../../../../public/next.svg";
+import jobFind from "../../../../public/search.png";
 
 function JobSearch() {
   return (
-    <div className="mb-10 mt-14 flex py-10">
+    <div className="flex bg-white py-10 pb-16 pt-24">
       <div className="flex w-1/2 flex-col items-center justify-center gap-10">
         <h2 className="mb-6 w-full pl-8 text-center text-3xl font-medium">
           Encontrar está reservado <br /> para aquellos que buscan
@@ -29,7 +29,7 @@ function JobSearch() {
         </button>
       </div>
       <div className="flex w-1/2 items-center justify-center">
-        <Image src={logo} alt="" width={450} height={500} />
+        <Image src={jobFind} alt="" width={450} height={500} />
       </div>
     </div>
   );
