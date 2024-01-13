@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { PiPersonSimpleDuotone } from "react-icons/pi";
-import logo from "../../../public/next.svg";
+import logo from "../../../public/LOGO 1.png";
 
 function Navbar() {
   const router = useRouter();
@@ -17,8 +17,8 @@ function Navbar() {
   };
 
   return (
-    <nav className="flex h-32 w-screen justify-between border-b border-gray-400 bg-white shadow-inner shadow-black">
-      <Image alt="logo" src={logo} width={150} height={100} className="ml-12" />
+    <nav className="flex h-32 w-screen items-center justify-between border-b border-gray-400 bg-white shadow-inner shadow-black">
+      <Image alt="logo" src={logo} width={150} className="ml-12 h-24" />
       <div className="flex w-2/4 items-center justify-start gap-5 pl-2">
         <Link
           href="/about"
