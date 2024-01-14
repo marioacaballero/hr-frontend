@@ -13,7 +13,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
       - name: install dependecies
         run: npm install --no-audit --no-fund --no-optional
       - name: Run build
