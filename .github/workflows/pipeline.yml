@@ -15,6 +15,6 @@ jobs:
         with:
           node-version: 20
       - name: install dependecies
-        run: pnpm install --no-audit --no-fund --no-optional --omit=optional
+        run: npm install --no-audit --no-fund --no-optional --omit=optional
       - name: Run build
         run: pnpm build
