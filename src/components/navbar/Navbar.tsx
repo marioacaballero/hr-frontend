@@ -17,7 +17,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="flex h-32 w-screen items-center justify-between border-b border-gray-400 bg-white shadow-inner shadow-black">
+    <nav className="flex h-32 w-screen items-center justify-between border-b border-gray-400 bg-white shadow-2xl shadow-black">
       <Image
         alt="logo"
         src={logo}
