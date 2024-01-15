@@ -9,16 +9,21 @@ type response = {
   name: string;
 };
 export default async function CompanyRegister() {
-  const { data } = await apiservice.get("/activity-area");
-  const activityareas = data
-    ? data.map((area: response) => {
-        return { id: area.id, name: area.name.toUpperCase() };
-      })
-    : [];
-
-  return (
-    <div>
-      <FormCompany activityareas={activityareas} />
-    </div>
-  );
+  try {
+    const { data } = await apiservice.get("/activity-areas");
+    const activityareas = data.map((area: response) => {
+      return { id: area.id, name: area.name.toUpperCase() };
+    });
+    return (
+      <div>
+        <FormCompany activityareas={activityareas} />
+      </div>
+    );
+  } catch (error) {
+    return (
+      <div>
+        <FormCompany activityareas={[]} />
+      </div>
+    );
+  }
 }
