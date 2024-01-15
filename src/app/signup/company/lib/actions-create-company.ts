@@ -1,7 +1,6 @@
 "use server";
 
-import { apiurl } from "@/app/utils/config-url";
-import axios from "axios";
+import { apiservice } from "@/utils/service-api";
 import { z } from "zod";
 
 const CompanySchema = z.object({
@@ -73,7 +72,7 @@ export async function RegisterCompany(prevState: any, company: FormData) {
 
     console.log("RegisterCompany", newCompany);
 
-    await axios.post(`${apiurl}/auth/register-company`, newCompany);
+    await apiservice.post("/auth/register-company", newCompany);
   } catch (error: any) {
     console.log(error.issues);
     // console.log("error", error.response.data);

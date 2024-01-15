@@ -1,4 +1,4 @@
-import { apiservice } from "@/app/utils/service-api";
+import { apiservice } from "@/utils/service-api";
 import FormCompany from "./components/register-company-form";
 
 type response = {
