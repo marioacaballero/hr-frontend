@@ -38,7 +38,7 @@ const opinionsHardCode = [
 
 function Opinions() {
   return (
-    <div className="mb-10 mt-14 flex w-full flex-col items-center justify-between">
+    <div className="flex w-full flex-col items-center justify-between bg-white pb-10 pt-24">
       <h2 className="mb-10 w-full pl-20 text-left text-3xl font-medium uppercase">
         Opiniones
       </h2>
