@@ -13,9 +13,9 @@ function BlogCard({
   body: string;
 }) {
   return (
-    <div className="flex w-1/3 flex-col border border-gray-300">
+    <div className="flex w-1/3 flex-col rounded-xl border border-gray-300 bg-white">
       <header className="">
-        <Image src={blogD} alt="default" className="mb-4 h-28" />
+        <Image src={blogD} alt="default" className="mb-4 h-64 rounded-t-xl" />
         <h2 className="indent-5 text-lg capitalize">{title}</h2>
         <h4 className="indent-5 text-sm capitalize">{metadata}</h4>
       </header>
@@ -24,7 +24,7 @@ function BlogCard({
         <div className="text-2xl text-gray-500">
           <GiShare />
         </div>
-        <button className="rounded-md bg-gray-300 px-6 py-1 text-xs">
+        <button className="rounded-full bg-[#6750A4] px-6 py-3 text-sm text-white">
           Ver más
         </button>
       </div>

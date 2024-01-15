@@ -18,8 +18,8 @@ const blogsHardCode = [
 
 function Blog() {
   return (
-    <div className="mb-10 mt-14 flex flex-col items-center justify-between">
-      <h2 className="mb-6 w-full text-center text-3xl font-semibold">
+    <div className="flex flex-col items-center justify-between bg-gradient-to-b from-white to-gray-200 pb-16 pt-16">
+      <h2 className="mb-10 w-full text-center text-3xl font-semibold">
         Nuestro Blog
       </h2>
       <section className="align-center flex w-full justify-center gap-20">
