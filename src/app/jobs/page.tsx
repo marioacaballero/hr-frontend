@@ -4,7 +4,7 @@ import JobOffers from "./components/JobOffers";
 
 function Jobs(): React.ReactElement {
   return (
-    <div className="flex min-h-screen gap-5 bg-white">
+    <div className="flex min-h-screen gap-10 bg-white pb-20">
       <JobFilters />
       <JobOffers />
     </div>
