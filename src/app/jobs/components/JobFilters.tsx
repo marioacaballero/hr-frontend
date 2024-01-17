@@ -1,33 +1,118 @@
+"use client";
+
 import React from "react";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { JobFilters } from "@/utils/types/job-filters";
 
 export default function JobFilters() {
+  const [filters, setFilters] = React.useState<JobFilters>({
+    modality: false,
+    hierarchy: false,
+    workday: false,
+    contractType: false,
+  });
+
+  const handleShowFilters = (filter: keyof JobFilters) => {
+    setFilters({ ...filters, [filter]: !filters[filter] });
+  };
+
   return (
-    <section className="flex w-1/4 flex-col gap-4 pl-5 pt-10">
-      <h2 className="border border-white border-b-black py-4 uppercase">
+    <section className="flex w-1/5 flex-col gap-4 pl-8 pt-10">
+      <h2 className="border border-white border-b-black py-4 text-xl uppercase">
         Filtros
       </h2>
-      <select>
-        <option value="">modalidad</option>
-        <option value="">presencial</option>
-        <option value="">remoto</option>
-        <option value="">hibrido</option>
-      </select>
-      <select>
-        <option value="">jerarquia</option>
-        <option value="">junior</option>
-        <option value="">semi senior</option>
-        <option value="">senior</option>
-      </select>
-      <select>
-        <option value="">carga horaria</option>
-        <option value="">full time</option>
-        <option value="">part time</option>
-      </select>
-      <select>
-        <option value="">tipo de contratacion</option>
-        <option value="">indeterminado</option>
-        <option value="">temporal</option>
-      </select>
+      <div className="flex flex-col capitalize">
+        <label
+          className="flex justify-between text-lg hover:cursor-pointer"
+          onClick={() => handleShowFilters("modality")}
+        >
+          modalidad
+          {filters.modality ? <IoIosArrowUp /> : <IoIosArrowDown />}
+        </label>
+        {filters.modality && (
+          <div className="flex flex-col gap-1 pl-2 pt-3">
+            <label className="flex gap-2">
+              <input type="checkbox" />
+              presencial
+            </label>
+            <label className="flex gap-2">
+              <input type="checkbox" />
+              remoto
+            </label>
+            <label className="flex gap-2">
+              <input type="checkbox" />
+              hibrido
+            </label>
+          </div>
+        )}
+      </div>
+      <div className="flex flex-col  capitalize">
+        <label
+          className="flex justify-between text-lg hover:cursor-pointer"
+          onClick={() => handleShowFilters("hierarchy")}
+        >
+          jerarquia
+          {filters.modality ? <IoIosArrowUp /> : <IoIosArrowDown />}
+        </label>
+        {filters.hierarchy && (
+          <div className="flex flex-col gap-1 pl-2 pt-3">
+            <label className="flex gap-2">
+              <input type="checkbox" />
+              junior
+            </label>
+            <label className="flex gap-2">
+              <input type="checkbox" />
+              semi senior
+            </label>
+            <label className="flex gap-2">
+              <input type="checkbox" />
+              senior
+            </label>
+          </div>
+        )}
+      </div>
+      <div className="flex flex-col  capitalize">
+        <label
+          className="flex justify-between text-lg hover:cursor-pointer"
+          onClick={() => handleShowFilters("workday")}
+        >
+          carga horaria
+          {filters.workday ? <IoIosArrowUp /> : <IoIosArrowDown />}
+        </label>
+        {filters.workday && (
+          <div className="flex flex-col gap-1 pl-2 pt-3">
+            <label className="flex gap-2">
+              <input type="checkbox" />
+              full time
+            </label>
+            <label className="flex gap-2">
+              <input type="checkbox" />
+              part time
+            </label>
+          </div>
+        )}
+      </div>
+      <div className="flex flex-col  capitalize">
+        <label
+          className="flex justify-between text-lg hover:cursor-pointer"
+          onClick={() => handleShowFilters("contractType")}
+        >
+          tipo de contratacion
+          {filters.contractType ? <IoIosArrowUp /> : <IoIosArrowDown />}
+        </label>
+        {filters.contractType && (
+          <div className="flex flex-col gap-1 pl-2 pt-3">
+            <label className="flex gap-2">
+              <input type="checkbox" />
+              indeterminado
+            </label>
+            <label className="flex gap-2">
+              <input type="checkbox" />
+              temporal
+            </label>
+          </div>
+        )}
+      </div>
     </section>
   );
 }
