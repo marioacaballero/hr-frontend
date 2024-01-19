@@ -21,7 +21,8 @@ function Navbar() {
         alt="logo"
         src={logo}
         width={150}
-        className="ml-4 h-24 hover:cursor-pointer"
+        height={70}
+        className="ml-4 hover:cursor-pointer"
         onClick={() => router.push("/")}
       />
       <div className="flex w-2/4 items-center justify-start gap-5 pl-2">
