@@ -19,6 +19,7 @@ const config: Config = {
         "verde-bg2": "#d7e6b282",
         "verde-linea": "#16A76E",
         "azul-text": "#074546",
+        "about-bg": "#ffd36180",
       },
     },
   },
