@@ -2,7 +2,7 @@ import React from "react";
 
 function Purpose() {
   return (
-    <div>
+    <div className="mt-1">
       <h1 className="bg-violet-50 p-44 text-center text-4xl font-semibold">
         Nuestro Propósito
       </h1>

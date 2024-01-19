@@ -27,7 +27,7 @@ export default function FormCompany({
 }) {
   const [state, formAction] = useFormState(RegisterCompany, initialState);
   return (
-    <form action={formAction} className="relative bg-white p-16">
+    <form action={formAction} className="relative mt-1 bg-white p-16">
       <Image
         alt="fomr"
         src={formImage}

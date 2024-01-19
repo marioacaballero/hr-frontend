@@ -8,7 +8,7 @@ import { passwordValidation, termsValidation } from "../../utils/validations";
 
 export default function FormUser() {
   return (
-    <form action={RegisterUser} className="relative w-full bg-white p-16">
+    <form action={RegisterUser} className="relative mt-1 w-full bg-white p-16">
       <Image
         alt="fomr"
         src={formImage}
