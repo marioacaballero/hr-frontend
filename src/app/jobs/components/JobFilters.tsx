@@ -2,17 +2,17 @@
 
 import React from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { JobFilters } from "@/utils/types/job-filters";
+import { JobFilter } from "@/utils/types/job-filters";
 
 export default function JobFilters() {
-  const [filters, setFilters] = React.useState<JobFilters>({
+  const [filters, setFilters] = React.useState<JobFilter>({
     modality: false,
     hierarchy: false,
     workday: false,
     contractType: false,
   });
 
-  const handleShowFilters = (filter: keyof JobFilters) => {
+  const handleShowFilters = (filter: keyof JobFilter) => {
     setFilters({ ...filters, [filter]: !filters[filter] });
   };
 

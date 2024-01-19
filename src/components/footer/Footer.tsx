@@ -14,7 +14,13 @@ function Footer() {
   return (
     <footer className="flex w-full flex-col items-center justify-center gap-4 bg-gray-300 p-6">
       <div className="my-4 flex w-4/5 items-center justify-center border-b-2 border-black p-10">
-        <Image alt="logo" src={logo} width={150} className="ml-12 h-24" />
+        <Image
+          alt="logo"
+          src={logo}
+          width={150}
+          height={70}
+          className="ml-12"
+        />
       </div>
       <section className="flex gap-12 py-4 text-xl font-medium">
         <Link href="/">¿Quiénes Somos?</Link>
