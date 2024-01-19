@@ -16,44 +16,45 @@ function Navbar() {
   };
 
   return (
-    <nav className="flex h-32 w-screen items-center justify-between border-b border-gray-400 bg-white shadow-2xl shadow-black">
+    <nav className="flex h-32 items-center justify-between border-b border-gray-400 bg-white shadow-sm shadow-gray-400">
       <Image
         alt="logo"
         src={logo}
         width={150}
-        className="ml-12 h-24 hover:cursor-pointer"
+        height={70}
+        className="ml-4 hover:cursor-pointer"
         onClick={() => router.push("/")}
       />
       <div className="flex w-2/4 items-center justify-start gap-5 pl-2">
         <Link
           href="/about"
-          className="hover:bg-verde-bg border-verde-loro hover:text-verde-loro w-48 rounded-lg border p-2 text-center duration-500"
+          className="w-40 rounded-lg border border-verde-loro p-2 text-center duration-500 hover:bg-verde-bg hover:text-verde-loro"
         >
           ¿Quiénes somos?
         </Link>
         <Link
           href="/jobs"
-          className="hover:bg-verde-bg border-verde-loro hover:text-verde-loro w-48 rounded-lg border p-2 text-center duration-500"
+          className="w-40 rounded-lg border border-verde-loro p-2 text-center duration-500 hover:bg-verde-bg hover:text-verde-loro"
         >
           Buscar empleo
         </Link>
         <Link
           href="/"
-          className="hover:bg-verde-bg border-verde-loro hover:text-verde-loro w-48 rounded-lg border p-2 text-center duration-500"
+          className="w-40 rounded-lg border border-verde-loro p-2 text-center duration-500 hover:bg-verde-bg hover:text-verde-loro"
         >
           Publica tu aviso
         </Link>
       </div>
-      <div className="flex w-2/6 items-center justify-start gap-6">
+      <div className="flex w-2/6 items-center justify-end gap-6 pr-4">
         <Link
           href="/signin"
-          className="border-verde-loro text-verde-loro hover:bg-verde-bg w-36 rounded-lg border p-3 text-center duration-500"
+          className="w-36 rounded-lg border border-verde-loro p-2 text-center text-verde-loro duration-500 hover:bg-verde-bg"
         >
           Iniciar sesión
         </Link>
         <select
           onChange={(e) => onChange(e)}
-          className="bg-verde-loro text-azul-text w-44 rounded-lg p-3 text-center"
+          className="w-40 rounded-lg bg-verde-loro p-2 text-center text-azul-text"
         >
           <option value="">Registrate</option>
           <option value="user">Postulante</option>

@@ -2,8 +2,8 @@ import React from "react";
 
 function Purpose() {
   return (
-    <div>
-      <h1 className="bg-violet-50 p-44 text-center text-4xl font-semibold">
+    <div className="mt-1">
+      <h1 className="bg-about-bg p-44 text-center text-4xl font-semibold text-azul-text">
         Nuestro Propósito
       </h1>
       <section className="bg-white px-32 py-56">

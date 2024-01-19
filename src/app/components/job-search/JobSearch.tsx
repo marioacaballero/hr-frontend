@@ -5,7 +5,7 @@ import jobFind from "../../../../public/search.png";
 
 function JobSearch() {
   return (
-    <div className="flex bg-white py-10 pb-16 pt-24">
+    <div className="mt-1 flex bg-white py-10 pb-16 pt-24">
       <div className="flex w-1/2 flex-col items-center justify-center gap-10">
         <h2 className="mb-6 w-full pl-8 text-center text-3xl font-medium">
           Encontrar está reservado <br /> para aquellos que buscan

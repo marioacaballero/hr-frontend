@@ -1,11 +1,5 @@
 import Image from "next/image";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
-
-interface CardValueProps {
-  logo: StaticImport;
-  tittle: string;
-  description: string;
-}
+import { CardValueProps } from "@/utils/types/about";
 
 function CardValue({ logo, tittle, description }: CardValueProps) {
   return (
@@ -14,9 +8,11 @@ function CardValue({ logo, tittle, description }: CardValueProps) {
       <h3 className="mt-4 h-20 px-10 text-center text-3xl font-medium">
         {tittle}
       </h3>
-      <p className="h-40 w-full rounded-2xl bg-gray-300 p-4 text-center text-xl shadow-md shadow-gray-400">
-        {description}
-      </p>
+      {description && (
+        <p className="h-40 w-full rounded-2xl bg-gray-300 p-4 text-center text-xl shadow-md shadow-gray-400">
+          {description}
+        </p>
+      )}
     </div>
   );
 }
