@@ -31,6 +31,7 @@ export default function FormCompany({
       <Image
         alt="fomr"
         src={formImage}
+        width={600}
         className="absolute right-10 top-40 z-0"
       />
       <h1 className="py-10 text-3xl font-bold">
@@ -234,16 +235,16 @@ export default function FormCompany({
         <label className="flex gap-8 py-5 text-xl">
           ¿Ofrece apoyo a la integración?
           <div className="flex gap-2">
-            <input type="checkbox" name="integration" />
+            <input type="radio" name="integration" className="w-5" />
           </div>
         </label>
         <div className="flex flex-col gap-1 p-12 text-base">
           <label className="flex gap-2">
-            <input type="checkbox" name="terms" className="flex gap-2" />
+            <input type="checkbox" name="terms" className="flex w-4 gap-2" />
             Acepto las condiciones de uso y las politicas de privacidad *
           </label>
           <label className="flex gap-2">
-            <input type="checkbox" name="news" className="flex gap-2" />
+            <input type="checkbox" name="news" className="flex w-4 gap-2" />
             Acepto recibir novedades
           </label>
         </div>
@@ -251,7 +252,7 @@ export default function FormCompany({
       <section className="flex w-full flex-col items-center justify-center">
         <button
           type="submit"
-          className="w-44 rounded-lg  border-green-100 bg-green-100 p-3 text-center font-semibold uppercase duration-500 hover:bg-green-300"
+          className="w-44 rounded-lg  border-verde-bg2 bg-verde-bg2 p-3 text-center font-semibold uppercase duration-500 hover:bg-green-300"
           onClick={(e) => termsValidation(e)}
         >
           Crear Cuenta

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import formImage from "../../../../../public/form.png";
+import formImage2 from "../../../../../public/formImage2.png";
 import { RegisterUser } from "../lib/actions-create";
 import { passwordValidation, termsValidation } from "../../utils/validations";
 
@@ -11,8 +11,9 @@ export default function FormUser() {
     <form action={RegisterUser} className="relative mt-1 w-full bg-white p-16">
       <Image
         alt="fomr"
-        src={formImage}
-        className="absolute right-10 top-28 z-0"
+        src={formImage2}
+        width={400}
+        className="absolute right-20 top-28 z-0"
       />
       <h1 className="z-10 py-10 text-3xl font-bold">
         Creá tu cuenta y encontrá tu próxima oportunidad
@@ -77,6 +78,10 @@ export default function FormUser() {
               name="birthdate"
               className="w-52 rounded-lg border border-gray-500 p-3"
             />
+            <span className="pt-2 text-sm">
+              Solo para validar tu identidad,
+            </span>
+            <span className="text-sm">no se verá reflejado en tu CV</span>
           </label>
           <label className="z-10 flex flex-col gap-2">
             Teléfono celular *
@@ -97,6 +102,8 @@ export default function FormUser() {
                 className="w-48 rounded-lg border border-gray-500 p-3"
               />
             </div>
+            <span className="invisible pt-2 text-sm">.</span>
+            <span className="invisible text-sm">.</span>
           </label>
           <label className="z-10 flex flex-col gap-2">
             Redes sociales
@@ -118,6 +125,8 @@ export default function FormUser() {
                 className="rounded-lg border border-gray-500 p-3"
               />
             </div>
+            <span className="invisible pt-2 text-sm">.</span>
+            <span className="invisible text-sm">.</span>
           </label>
         </div>
         <div className="flex gap-8">
@@ -199,7 +208,7 @@ export default function FormUser() {
       <section className="flex w-full flex-col items-center justify-center">
         <button
           type="submit"
-          className="w-44 rounded-lg  border-green-100 bg-green-100 p-3 text-center font-semibold uppercase duration-500 hover:bg-green-300"
+          className="w-44 rounded-lg  border-verde-loro bg-verde-loro p-3 text-center font-semibold uppercase duration-500 hover:bg-green-300"
           onClick={(e) => termsValidation(e)}
         >
           Registrate
