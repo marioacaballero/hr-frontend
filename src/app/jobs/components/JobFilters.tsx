@@ -89,6 +89,14 @@ export default function JobFilters() {
               <input type="checkbox" />
               part time
             </label>
+            <label className="flex gap-2">
+              <input type="checkbox" />
+              freelance
+            </label>
+            <label className="flex gap-2">
+              <input type="checkbox" />
+              por hora
+            </label>
           </div>
         )}
       </div>
@@ -109,6 +117,14 @@ export default function JobFilters() {
             <label className="flex gap-2">
               <input type="checkbox" />
               temporal
+            </label>
+            <label className="flex gap-2">
+              <input type="checkbox" />
+              autonomo
+            </label>
+            <label className="flex gap-2">
+              <input type="checkbox" />
+              pasantia
             </label>
           </div>
         )}
