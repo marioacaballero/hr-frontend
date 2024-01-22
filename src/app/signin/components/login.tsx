@@ -4,8 +4,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { LoginMember } from "../lib/action-login";
 import bridge from "../../../../public/loginImage.png";
+import { MouseEvent, useState } from "react";
 
 export default function Login() {
+  const [seePass, setSeePass] = useState(false)
+
+  const handleClick = (e: MouseEvent<HTMLDivElement>) => {
+    e.preventDefault()
+    setSeePass(!seePass)
+    
+  }
+
   return (
     <form action={LoginMember} className="mt-1 flex bg-white">
       <section className="flex w-1/2 flex-col py-16">
@@ -23,17 +32,37 @@ export default function Login() {
               className="rounded-md border border-gray-300 p-4"
             />
           </label>
-          <label className="flex flex-col gap-2 text-lg">
+          <label className="flex flex-col gap-2 text-lg relative">
             Contraseña
+            <div className="flex">
+
             <input
-              type="password"
+              type={!seePass ? "password" : "text"}
               required
               name="password"
               placeholder="Contraseña"
-              className="rounded-md border border-gray-300 p-4"
+              className="rounded-md border border-gray-300 p-4 w-full"
             />
+        {!seePass ? 
+         <Image 
+         onClick={(e) => handleClick(e)}
+            width={40}
+            height={40}
+            src="/see-pass.png" 
+            alt=""
+            className="absolute top-11 right-0 opacity-55"
+            /> :  <Image 
+            onClick={(e) => handleClick(e)}
+            width={40}
+            height={40}
+            src="/see-not-pass.png" 
+            alt=""
+            className="absolute top-11 right-0 opacity-55"
+            />}
+            </div>
           </label>
-          <Link href={"/"} className="text-lg">
+          <Link href={"/"} className="t
+          ext-lg">
             Olvidaste tu contraseña?
           </Link>
           <div className="flex flex-col gap-4 pl-16">

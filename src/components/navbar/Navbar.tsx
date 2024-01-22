@@ -39,7 +39,7 @@ function Navbar() {
           Buscar empleo
         </Link>
         <Link
-          href="/"
+          href="/jobs/post"
           className="w-40 rounded-lg border border-verde-loro p-2 text-center duration-500 hover:bg-verde-bg hover:text-verde-loro"
         >
           Publica tu aviso
@@ -48,6 +48,7 @@ function Navbar() {
       <div className="flex w-2/6 items-center justify-end gap-6 pr-4">
         <Link
           href="/signin"
+         
           className="w-36 rounded-lg border border-verde-loro p-2 text-center text-verde-loro duration-500 hover:bg-verde-bg"
         >
           Iniciar sesión

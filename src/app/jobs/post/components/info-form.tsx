@@ -5,43 +5,62 @@ import React from "react";
 export default function InfoForm() {
   return (
     <div>
-      <label>
+      <label className="flex flex-col">
         Área del puesto*
         <select>
           <option>Selecciona una opción</option>
         </select>
       </label>
-      <div>
+      <div className="flex flex-col">
         ¿Qué nivel de experiencia buscas?*
-        <label>
+        <div className="flex flex-wrap gap-8 w-4/6 justify-items-center  ">
+
+        <label className="p-4 border-solid border-2 border-#cbd5e1 rounded-md p-1">
           <input type="checkbox" />
           Primer trabajo
         </label>
-        <label>
+        <label className="p-4 border-solid border-2 border-#cbd5e1 rounded-md p-1">
           <input type="checkbox" />
           Trainee/Pasante
         </label>
-        <label>
+        <label className="p-4 border-solid border-2 border-#cbd5e1 rounded-md p-1">
           <input type="checkbox" />
           Junior
         </label>
-        <label>
+        <label className="p-4 border-solid border-2 border-#cbd5e1 rounded-md p-1">
           <input type="checkbox" />
           Semi Senior
         </label>
+        <label className="p-4 border-solid border-2 border-#cbd5e1 rounded-md p-1">
+          <input type="checkbox" />
+          Jefe/Supervisor
+        </label>
+        <label className="p-4 border-solid border-2 border-#cbd5e1 rounded-md p-1">
+          <input type="checkbox" />
+          Gerencia/Direccion
+        </label>
+        <label className="p-4 border-solid border-2 border-#cbd5e1 rounded-md p-1">
+          <input type="checkbox" />
+          No requerido
+        </label>
+        <label className="p-4 border-solid border-2 border-#cbd5e1 rounded-md p-1">
+          <input type="checkbox" />
+          Servicio independiente
+        </label>
+        </div>
       </div>
-      <div>
+      <div className="flex flex-col">
         ¿Donde se encuentra el lugar de trabajo?*
-        <label>
+        <label className="flex flex-col">
           País/Provincia/Ciudad*
           <input type="text" />
         </label>
       </div>
-      <label>
+      <label className="flex flex-col">
         ¿En qué consiste el puesto?*
         <textarea placeholder="Ingresa la descripción, objetivo, principales tareas y responsabilidades/requisitos"></textarea>
       </label>
-      <div>
+      <div className="flex flex-col">
         ¿Qué tipo de contratación ofreces?*
         <label>
           <input type="checkbox" />
@@ -60,7 +79,7 @@ export default function InfoForm() {
           Pasantía
         </label>
       </div>
-      <div>
+      <div className="flex flex-col">
         ¿Qué carga horario tiene el puesto?*
         <label>
           <input type="checkbox" />
@@ -79,7 +98,7 @@ export default function InfoForm() {
           Por horas
         </label>
       </div>
-      <div>
+      <div className="flex flex-col">
         ¿Qué modalidad de trabajo aplicaría al puesto?*
         <label>
           <input type="checkbox" />
@@ -94,7 +113,7 @@ export default function InfoForm() {
           Híbrido
         </label>
       </div>
-      <div>
+      <div className="flex flex-col"> 
         ¿Cuál es el rango salarial de la oferta de empleo?
         <input
           type="text"
@@ -105,7 +124,7 @@ export default function InfoForm() {
           Mostrar el rango en el aviso
         </label>
       </div>
-      <div>
+      <div className="flex flex-col">
         ¿Querés recibir los CVs por email?*
         <label>
           <input type="checkbox" />
@@ -116,7 +135,7 @@ export default function InfoForm() {
           No
         </label>
       </div>
-      <div>
+      <div className="flex flex-col">
         ¿Querés mostrar el nombre de la organización en el aviso?*
         <label>
           <input type="checkbox" />
