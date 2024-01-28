@@ -2,12 +2,16 @@
 
 import React from "react";
 import InfoForm from "./info-form";
+import RequireForm from "./require-form";
+import QuestionForm from "./question-form";
 
 export default function PostForm(): React.ReactElement {
   return (
     <form>
-      <h2>Completa tu aviso</h2>
       <InfoForm />
+      <RequireForm />
+      <QuestionForm />
+      <button>Publicar aviso</button>
     </form>
   );
 }
