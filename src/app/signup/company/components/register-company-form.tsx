@@ -1,15 +1,15 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
-import { RegisterCompany } from "../lib/actions-create-company";
+import Link from "next/link";
+import { useFormState } from "react-dom";
 import formImage from "../../../../../public/form.png";
 import {
   emailValidation,
   passwordValidation,
   termsValidation,
 } from "../../utils/validations";
-import { useFormState } from "react-dom";
+import { RegisterCompany } from "../lib/actions-create-company";
 
 type activityareas = {
   name: string;
@@ -52,6 +52,7 @@ export default function FormCompany({
               name="firstName"
               placeholder="Nombre"
               className="rounded-lg border border-gray-500 p-3"
+              required
             />
           </label>
           <label className="flex flex-col gap-1">
@@ -61,6 +62,7 @@ export default function FormCompany({
               name="lastName"
               placeholder="Apellido"
               className="rounded-lg border border-gray-500 p-3"
+              required
             />
           </label>
         </div>
@@ -72,7 +74,8 @@ export default function FormCompany({
               name="email"
               placeholder="Email"
               className="rounded-lg border border-gray-500 p-3"
-              // onChange={(e) => emailValidation(e)}
+              required
+              onChange={(e) => emailValidation(e)}
             />
             <span className="pt-2 text-sm">
               A este mail se enviaran las facturas
@@ -85,6 +88,7 @@ export default function FormCompany({
               name="password"
               placeholder="Contraseña"
               className="rounded-lg border border-gray-500 p-3"
+              required
             />
             <span className="pt-2 text-sm">
               Debe tener 6 digitos como mínimo
@@ -100,6 +104,7 @@ export default function FormCompany({
               placeholder="Repetir contraseña"
               className="rounded-lg border border-gray-500 p-3"
               onChange={(e) => passwordValidation(e)}
+              required
             />
           </label>
         </div>
@@ -116,6 +121,7 @@ export default function FormCompany({
               name="name"
               placeholder="Nombre de la organización"
               className="rounded-lg border border-gray-500 p-3"
+              required
             />
           </label>
           <label className="flex flex-col gap-1">
@@ -125,6 +131,7 @@ export default function FormCompany({
               name="bussinessName"
               placeholder="Razón social"
               className="rounded-lg border border-gray-500 p-3"
+              required
             />
           </label>
           <label className="flex flex-col gap-1">
@@ -147,6 +154,7 @@ export default function FormCompany({
             <select
               className="rounded-lg border border-gray-500 bg-white p-3"
               name="fiscalCondition"
+              required
             >
               <option value="responsable inscripto">
                 Responsable inscripto
@@ -163,6 +171,7 @@ export default function FormCompany({
               name="IDnumber"
               placeholder="Solo numeros sin guiones"
               className="rounded-lg border border-gray-500 p-3"
+              required
             />
           </label>
           <label className="flex flex-col gap-1">
@@ -184,6 +193,7 @@ export default function FormCompany({
               name="cityAndCountry"
               placeholder="Pais, Provincia, Ciudad"
               className="rounded-lg border border-gray-500 p-3"
+              required
             />
           </label>
           <label className="flex flex-col gap-1">
@@ -193,6 +203,7 @@ export default function FormCompany({
               name="postalCode"
               placeholder="Cod postal"
               className="w-36 rounded-lg border border-gray-500 p-3"
+              required
             />
           </label>
         </div>
@@ -214,6 +225,7 @@ export default function FormCompany({
                 name="phoneNum"
                 placeholder="Ej. 1156329815"
                 className="w-48 rounded-lg border border-gray-500 p-3"
+                required
               />
               <input
                 type="text"
