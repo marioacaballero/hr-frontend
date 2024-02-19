@@ -2,12 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useFormState } from "react-dom";
 import formImage from "../../../../../public/form.png";
 import {
+  cuilValidation,
+  cuilValidationDb,
   emailValidation,
+  emailValidationDb,
   passwordValidation,
-  termsValidation,
+  passwordValidationConcidence,
+  phoneNumberValidation,
 } from "../../utils/validations";
 import { RegisterCompany } from "../lib/actions-create-company";
 
@@ -16,18 +19,13 @@ type activityareas = {
   id: number;
 };
 
-const initialState = {
-  message: null,
-};
-
 export default function FormCompany({
   activityareas,
 }: {
   activityareas: activityareas[];
 }) {
-  const [state, formAction] = useFormState(RegisterCompany, initialState);
   return (
-    <form action={formAction} className="relative mt-1 bg-white p-16">
+    <form action={RegisterCompany} className="relative mt-1 bg-white p-16">
       <Image
         alt="fomr"
         src={formImage}
@@ -75,7 +73,8 @@ export default function FormCompany({
               placeholder="Email"
               className="rounded-lg border border-gray-500 p-3"
               required
-              onChange={(e) => emailValidation(e)}
+              onBlur={() => emailValidationDb("company")}
+              onChange={() => emailValidation()}
             />
             <span className="pt-2 text-sm">
               A este mail se enviaran las facturas
@@ -88,6 +87,7 @@ export default function FormCompany({
               name="password"
               placeholder="Contraseña"
               className="rounded-lg border border-gray-500 p-3"
+              onChange={() => passwordValidation()}
               required
             />
             <span className="pt-2 text-sm">
@@ -103,7 +103,7 @@ export default function FormCompany({
               name="passwordvalidation"
               placeholder="Repetir contraseña"
               className="rounded-lg border border-gray-500 p-3"
-              onChange={(e) => passwordValidation(e)}
+              onChange={() => passwordValidationConcidence()}
               required
             />
           </label>
@@ -171,7 +171,11 @@ export default function FormCompany({
               name="IDnumber"
               placeholder="Solo numeros sin guiones"
               className="rounded-lg border border-gray-500 p-3"
+              pattern="(20|23|24|25|26|27|30|33|34)\d{8}\d"
+              title="El CUIL/CUIT no es válido"
               required
+              onChange={() => cuilValidation()}
+              onBlur={() => cuilValidationDb("company")}
             />
           </label>
           <label className="flex flex-col gap-1">
@@ -226,6 +230,7 @@ export default function FormCompany({
                 placeholder="Ej. 1156329815"
                 className="w-48 rounded-lg border border-gray-500 p-3"
                 required
+                onChange={() => phoneNumberValidation()}
               />
               <input
                 type="text"
@@ -252,7 +257,12 @@ export default function FormCompany({
         </label>
         <div className="flex flex-col gap-1 p-12 text-base">
           <label className="flex gap-2">
-            <input type="checkbox" name="terms" className="flex w-4 gap-2" />
+            <input
+              type="checkbox"
+              name="terms"
+              className="flex w-4 gap-2"
+              required
+            />
             Acepto las condiciones de uso y las politicas de privacidad *
           </label>
           <label className="flex gap-2">
@@ -265,13 +275,11 @@ export default function FormCompany({
         <button
           type="submit"
           className="w-44 rounded-lg  border-verde-bg2 bg-verde-bg2 p-3 text-center font-semibold uppercase duration-500 hover:bg-green-300"
-          onClick={(e) => termsValidation(e)}
+          onClick={() => cuilValidationDb("company")}
         >
           Crear Cuenta
         </button>
-        <p aria-live="polite" className="text-red-500">
-          {state?.message}
-        </p>
+
         <div className="flex gap-2 py-10 text-gray-600">
           <span>¿Ya tienes cuenta?</span>
           <Link

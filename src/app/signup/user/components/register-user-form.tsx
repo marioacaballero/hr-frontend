@@ -1,16 +1,24 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import formImage2 from "../../../../../public/formImage2.png";
+import {
+  cuilValidation,
+  cuilValidationDb,
+  emailValidation,
+  emailValidationDb,
+  passwordValidation,
+  passwordValidationConcidence,
+  phoneNumberValidation,
+} from "../../utils/validations";
 import { RegisterUser } from "../lib/actions-create";
-import { passwordValidation, termsValidation } from "../../utils/validations";
 
 export default function FormUser() {
   return (
     <form action={RegisterUser} className="relative mt-1 w-full bg-white p-16">
       <Image
-        alt="fomr"
+        alt="form"
         src={formImage2}
         width={400}
         className="absolute right-20 top-28 z-0"
@@ -30,6 +38,7 @@ export default function FormUser() {
               name="firstName"
               placeholder="Nombre"
               className="rounded-lg border border-gray-500 p-3"
+              required
             />
           </label>
           <label className="flex flex-col gap-2">
@@ -39,6 +48,7 @@ export default function FormUser() {
               name="lastName"
               placeholder="Apellido"
               className="z-10 rounded-lg border border-gray-500 p-3"
+              required
             />
           </label>
         </div>
@@ -46,16 +56,22 @@ export default function FormUser() {
           <label className="flex flex-col gap-2">
             Tipo y número de documento *
             <div className="flex gap-2">
-              <select className="rounded-lg border border-gray-500 bg-white p-3">
+              <select
+                className="rounded-lg border border-gray-500 bg-white p-3"
+                name="IDnumberType"
+              >
                 <option value="dni">DNI</option>
                 <option value="dni">Pasaporte</option>
                 <option value="dni">Cedula</option>
               </select>
               <input
                 type="text"
-                name="dni"
+                name="IDnumber"
                 placeholder="Numero"
                 className="rounded-lg border border-gray-500 p-3"
+                onChange={() => cuilValidation()}
+                onBlur={() => cuilValidationDb("user")}
+                required
               />
             </div>
           </label>
@@ -66,6 +82,7 @@ export default function FormUser() {
               name="cityAndCountry"
               placeholder="Pais, Provincia, Ciudad"
               className="rounded-lg border border-gray-500 p-3"
+              required
             />
           </label>
         </div>
@@ -74,9 +91,9 @@ export default function FormUser() {
             Fecha de nacimiento *
             <input
               type="date"
-              id="birthdate"
               name="birthdate"
               className="w-52 rounded-lg border border-gray-500 p-3"
+              required
             />
             <span className="pt-2 text-sm">
               Solo para validar tu identidad,
@@ -100,6 +117,8 @@ export default function FormUser() {
                 name="phoneNum"
                 placeholder="Ej. 1156329815"
                 className="w-48 rounded-lg border border-gray-500 p-3"
+                onChange={() => phoneNumberValidation()}
+                required
               />
             </div>
             <span className="invisible pt-2 text-sm">.</span>
@@ -108,7 +127,10 @@ export default function FormUser() {
           <label className="z-10 flex flex-col gap-2">
             Redes sociales
             <div className="flex gap-2">
-              <select className="rounded-lg border border-gray-500 bg-white p-3">
+              <select
+                className="rounded-lg border border-gray-500 bg-white p-3"
+                name="socialName"
+              >
                 <option value="facebook">Facebook</option>
                 <option value="instagram">Instagram</option>
                 <option value="linkedin">LinkedIn</option>
@@ -119,7 +141,6 @@ export default function FormUser() {
               </select>
               <input
                 type="text"
-                id="social"
                 name="social"
                 placeholder="Perfil"
                 className="rounded-lg border border-gray-500 p-3"
@@ -137,6 +158,9 @@ export default function FormUser() {
               name="email"
               placeholder="Email"
               className="rounded-lg border border-gray-500 p-3"
+              onBlur={() => emailValidationDb("user")}
+              onChange={() => emailValidation()}
+              required
             />
           </label>
           <label className="flex flex-col gap-1">
@@ -146,6 +170,8 @@ export default function FormUser() {
               name="password"
               placeholder="Contraseña"
               className="w-60 rounded-lg border border-gray-500 p-3"
+              onChange={() => passwordValidation()}
+              required
             />
             <span className="pt-2 text-sm">
               Debe tener 6 digitos como mínimo
@@ -158,7 +184,8 @@ export default function FormUser() {
               name="passwordvalidation"
               placeholder="Repetir contraseña"
               className="w-60 rounded-lg border border-gray-500 p-3"
-              onChange={(e) => passwordValidation(e)}
+              onChange={() => passwordValidationConcidence()}
+              required
             />
           </label>
         </div>
@@ -196,7 +223,12 @@ export default function FormUser() {
         </label>
         <div className="flex flex-col gap-1 p-12 text-base">
           <label className="flex gap-2">
-            <input type="checkbox" name="terms" className="flex gap-2" />
+            <input
+              type="checkbox"
+              name="terms"
+              className="flex gap-2"
+              required
+            />
             Acepto las condiciones de uso y las politicas de privacidad *
           </label>
           <label className="flex gap-2">
@@ -209,7 +241,7 @@ export default function FormUser() {
         <button
           type="submit"
           className="w-44 rounded-lg  border-verde-loro bg-verde-loro p-3 text-center font-semibold uppercase duration-500 hover:bg-green-300"
-          onClick={(e) => termsValidation(e)}
+          onClick={() => cuilValidationDb("user")}
         >
           Registrate
         </button>

@@ -1,33 +1,8 @@
 "use server";
 
 import { apiservice } from "@/utils/service-api";
-import { z } from "zod";
 
-const CompanySchema = z.object({
-  firstName: z.string().max(20),
-  lastName: z.string().max(20),
-  email: z.string().email({ message: "El email es incorrecto" }),
-  password: z
-    .string()
-    .min(6, { message: "La contraseña es muy corta" })
-    .max(20),
-  name: z.string(),
-  bussinessName: z.string(),
-  activityArea: z.string(),
-  fiscalCondition: z.string(),
-  IDnumber: z.string(),
-  cityAndCountry: z.string(),
-  postalCode: z.string(),
-  phonePref: z.string(),
-  phoneNum: z.string(),
-  socialMedia: z.string(),
-  web: z.string(),
-  integration: z.string(),
-  news: z.string() || z.undefined(),
-  isONG: z.string(),
-});
-
-export async function RegisterCompany(prevState: any, company: FormData) {
+export async function RegisterCompany(company: FormData) {
   try {
     const {
       firstName,
@@ -48,7 +23,7 @@ export async function RegisterCompany(prevState: any, company: FormData) {
       integration,
       news,
       isONG,
-    } = CompanySchema.parse(Object.fromEntries(company.entries()));
+    } = Object.fromEntries(company.entries());
 
     const newCompany = {
       firstName,
@@ -57,7 +32,7 @@ export async function RegisterCompany(prevState: any, company: FormData) {
       password,
       name,
       bussinessName,
-      activityArea: { id: +activityArea },
+      activityArea: { id: activityArea },
       fiscalCondition,
       IDnumber,
       cityAndCountry,
@@ -72,9 +47,20 @@ export async function RegisterCompany(prevState: any, company: FormData) {
 
     console.log("RegisterCompany", newCompany);
 
-    await apiservice.post("/auth/register-company", newCompany);
+    const { data } = await apiservice.post(
+      "/auth/register-company",
+      newCompany,
+    );
+
+    console.log("createCompany", data);
+
+    if (data.id) {
+      console.log("Empresa creada con éxito");
+    } else {
+      console.log(data.message);
+    }
   } catch (error: any) {
-    console.log(error.issues);
+    console.log(error);
     // console.log("error", error.response.data);
     return { message: error.issues };
   }
