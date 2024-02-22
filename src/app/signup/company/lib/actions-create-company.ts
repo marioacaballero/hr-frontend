@@ -1,33 +1,9 @@
 "use server";
 
 import { apiservice } from "@/utils/service-api";
-import { z } from "zod";
+import { redirect } from "next/navigation";
 
-const CompanySchema = z.object({
-  firstName: z.string().max(20),
-  lastName: z.string().max(20),
-  email: z.string().email({ message: "El email es incorrecto" }),
-  password: z
-    .string()
-    .min(6, { message: "La contraseña es muy corta" })
-    .max(20),
-  name: z.string(),
-  bussinessName: z.string(),
-  activityArea: z.string(),
-  fiscalCondition: z.string(),
-  IDnumber: z.string(),
-  cityAndCountry: z.string(),
-  postalCode: z.string(),
-  phonePref: z.string(),
-  phoneNum: z.string(),
-  socialMedia: z.string(),
-  web: z.string(),
-  integration: z.string(),
-  news: z.string() || z.undefined(),
-  isONG: z.string(),
-});
-
-export async function RegisterCompany(prevState: any, company: FormData) {
+export async function RegisterCompany(company: FormData) {
   try {
     const {
       firstName,
@@ -48,34 +24,31 @@ export async function RegisterCompany(prevState: any, company: FormData) {
       integration,
       news,
       isONG,
-    } = CompanySchema.parse(Object.fromEntries(company.entries()));
+    } = Object.fromEntries(company.entries());
 
     const newCompany = {
-      firstName,
-      lastName,
-      email,
+      firstName: firstName.toString().toLowerCase(),
+      lastName: lastName.toString().toLowerCase(),
+      email: email.toString().toLowerCase(),
       password,
-      name,
-      bussinessName,
-      activityArea: { id: +activityArea },
+      name: name.toString().toLowerCase(),
+      bussinessName: bussinessName.toString().toLowerCase(),
+      activityArea: { id: activityArea },
       fiscalCondition,
       IDnumber,
-      cityAndCountry,
+      cityAndCountry: cityAndCountry.toString().toLowerCase(),
       postalCode,
       phone: `${phonePref}${phoneNum}`,
-      socialMedia,
-      web,
+      socialMedia: socialMedia.toString().toLowerCase(),
+      web: web.toString().toLowerCase(),
       integration: integration === "on",
       news: news === "on",
       isONG: isONG === "on",
     };
 
-    console.log("RegisterCompany", newCompany);
-
     await apiservice.post("/auth/register-company", newCompany);
   } catch (error: any) {
-    console.log(error.issues);
-    // console.log("error", error.response.data);
     return { message: error.issues };
   }
+  redirect("/signin");
 }
