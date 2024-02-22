@@ -31,7 +31,7 @@ export const emailValidationDb = async (profileType: string) => {
   const email = document.getElementsByName("email")[0] as HTMLInputElement;
   try {
     const { data } = await apiservice.get(
-      `/profile-${profileType}/search-email?email=${email.value}`,
+      `/profile-${profileType}/search-email?email=${email.value.toLocaleLowerCase()}`,
     );
     if (data) {
       email.setCustomValidity(
@@ -54,13 +54,10 @@ export const cuilValidation = () => {
 
 export const cuilValidationDb = async (profileType: string) => {
   const cuil = document.getElementsByName("IDnumber")[0] as HTMLInputElement;
-  console.log(cuil.value);
   try {
     const { data } = await apiservice.get(
       `/profile-${profileType}/search-cuil?cuil=${cuil.value}`,
     );
-
-    console.log(data);
 
     if (data) {
       cuil.setCustomValidity(
