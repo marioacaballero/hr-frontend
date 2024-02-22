@@ -13,6 +13,7 @@ import {
   phoneNumberValidation,
 } from "../../utils/validations";
 import { RegisterUser } from "../lib/actions-create";
+import { ID_TYPE } from "../../utils/enums";
 
 export default function FormUser() {
   return (
@@ -60,9 +61,11 @@ export default function FormUser() {
                 className="rounded-lg border border-gray-500 bg-white p-3"
                 name="IDnumberType"
               >
-                <option value="dni">DNI</option>
-                <option value="dni">Pasaporte</option>
-                <option value="dni">Cedula</option>
+                {ID_TYPE.map((type) => (
+                  <option key={type.value} value={type.value}>
+                    {type.name}
+                  </option>
+                ))}
               </select>
               <input
                 type="text"
