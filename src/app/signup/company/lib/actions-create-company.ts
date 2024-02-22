@@ -1,6 +1,7 @@
 "use server";
 
 import { apiservice } from "@/utils/service-api";
+import { redirect } from "next/navigation";
 
 export async function RegisterCompany(company: FormData) {
   try {
@@ -26,42 +27,28 @@ export async function RegisterCompany(company: FormData) {
     } = Object.fromEntries(company.entries());
 
     const newCompany = {
-      firstName,
-      lastName,
-      email,
+      firstName: firstName.toString().toLowerCase(),
+      lastName: lastName.toString().toLowerCase(),
+      email: email.toString().toLowerCase(),
       password,
-      name,
-      bussinessName,
+      name: name.toString().toLowerCase(),
+      bussinessName: bussinessName.toString().toLowerCase(),
       activityArea: { id: activityArea },
       fiscalCondition,
       IDnumber,
-      cityAndCountry,
+      cityAndCountry: cityAndCountry.toString().toLowerCase(),
       postalCode,
       phone: `${phonePref}${phoneNum}`,
-      socialMedia,
-      web,
+      socialMedia: socialMedia.toString().toLowerCase(),
+      web: web.toString().toLowerCase(),
       integration: integration === "on",
       news: news === "on",
       isONG: isONG === "on",
     };
 
-    console.log("RegisterCompany", newCompany);
-
-    const { data } = await apiservice.post(
-      "/auth/register-company",
-      newCompany,
-    );
-
-    console.log("createCompany", data);
-
-    if (data.id) {
-      console.log("Empresa creada con éxito");
-    } else {
-      console.log(data.message);
-    }
+    await apiservice.post("/auth/register-company", newCompany);
   } catch (error: any) {
-    console.log(error);
-    // console.log("error", error.response.data);
     return { message: error.issues };
   }
+  redirect("/signin");
 }
