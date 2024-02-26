@@ -1,12 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
-import { LoginMember } from "../lib/action-login";
-import bridge from "../../../../public/loginImage.png";
+import Link from "next/link";
 import { MouseEvent, useState } from "react";
 import { useFormState } from "react-dom";
-import { SubmitButton } from "@/app/signup/components/submit-button";
+import bridge from "../../../../public/loginImage.png";
+import { LoginMember } from "../lib/action-login";
+import { LoginButton } from "./login-button";
 
 const initialState = {
   message: "",
@@ -107,7 +107,7 @@ export default function Login() {
           </div>
         </div>
         <div className="mt-20 flex w-3/4 flex-col items-center gap-20">
-          <SubmitButton displayText="Iniciar sesión" />
+          <LoginButton />
           <div className="flex items-center justify-center gap-2 text-xl uppercase tracking-wide text-gray-500">
             <span>No tienes cuenta?</span>
             <Link
