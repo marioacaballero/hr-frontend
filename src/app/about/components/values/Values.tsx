@@ -17,14 +17,6 @@ function Values() {
             <CardValue key={data.id} logo={data.logo} tittle={data.title} />
           )}
         </For>
-        {/* {valuesData.map((data) => (
-          <CardValue
-            key={data.id}
-            logo={data.logo}
-            tittle={data.title}
-            description={data.description}
-          />
-        ))} */}
       </section>
     </div>
   );
