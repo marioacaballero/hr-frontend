@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import { GiShare } from "react-icons/gi";
 import blogD from "../../../../../public/blog.jpg";
 

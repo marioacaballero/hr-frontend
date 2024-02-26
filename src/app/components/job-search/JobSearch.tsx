@@ -1,6 +1,5 @@
 import Image from "next/image";
-import React from "react";
-import { BiSearchAlt2, BiMap } from "react-icons/bi";
+import { BiMap, BiSearchAlt2 } from "react-icons/bi";
 import jobFind from "../../../../public/search.png";
 
 function JobSearch() {

@@ -1,11 +1,10 @@
 "use client";
 
-import React from "react";
 import InfoForm from "./info-form";
-import RequireForm from "./require-form";
 import QuestionForm from "./question-form";
+import RequireForm from "./require-form";
 
-export default function PostForm(): React.ReactElement {
+export default function PostForm() {
   return (
     <form>
       <InfoForm />

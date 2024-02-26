@@ -1,4 +1,3 @@
-import React from "react";
 import OpinionCard from "./components/OpinionCard";
 
 const opinionsHardCode = [

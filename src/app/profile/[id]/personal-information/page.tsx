@@ -1,5 +1,3 @@
-import React from "react";
-
-export default function PersonalInformation() {
+export default function PersonalInfo() {
   return <div>Acá muestra la información personal</div>;
 }

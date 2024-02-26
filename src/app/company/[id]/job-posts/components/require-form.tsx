@@ -1,7 +1,5 @@
 "use client";
 
-import React from "react";
-
 export default function RequireForm() {
   return (
     <div>

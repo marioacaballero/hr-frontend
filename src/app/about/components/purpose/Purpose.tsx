@@ -1,6 +1,4 @@
-import React from "react";
-
-function Purpose() {
+export default function Purpose() {
   return (
     <div className="mt-1">
       <h1 className="bg-about-bg p-44 text-center text-4xl font-semibold text-azul-text">
@@ -36,5 +34,3 @@ function Purpose() {
     </div>
   );
 }
-
-export default Purpose;

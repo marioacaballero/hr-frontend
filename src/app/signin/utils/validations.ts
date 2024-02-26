@@ -10,8 +10,8 @@ export const emailValidationDb = async (profileType: string) => {
       email.setCustomValidity(
         "El email ya está registrado en la base de datos",
       );
-    } else {
-      email.setCustomValidity("");
     }
-  } catch (error) {}
+  } catch (error) {
+    email.setCustomValidity("");
+  }
 };

@@ -1,8 +1,7 @@
 "use client";
 
-import React from "react";
-import { createActivity } from "../lib/create-activity";
 import { useFormState } from "react-dom";
+import { createActivity } from "../lib/create-activity";
 
 const initialState = {
   message: "",

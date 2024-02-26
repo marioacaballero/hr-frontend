@@ -1,7 +1,7 @@
 import Purpose from "./components/purpose/Purpose";
 import Values from "./components/values/Values";
 
-function About() {
+export default function About() {
   return (
     <div>
       <Purpose />
@@ -9,5 +9,3 @@ function About() {
     </div>
   );
 }
-
-export default About;

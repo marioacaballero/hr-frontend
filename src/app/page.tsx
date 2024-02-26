@@ -1,9 +1,9 @@
 import Image from "next/image";
-import JobSearch from "./components/job-search/JobSearch";
-import Comunity from "./components/comunity/Comunity";
-import Opinions from "./components/opinions/Opinions";
-import Blog from "./components/blog/Blog";
 import cross from "../../public/cross.png";
+import Blog from "./components/blog/Blog";
+import Comunity from "./components/comunity/Comunity";
+import JobSearch from "./components/job-search/JobSearch";
+import Opinions from "./components/opinions/Opinions";
 
 export default function Home() {
   return (

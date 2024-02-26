@@ -1,9 +1,9 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import React from "react";
 import { PiPersonSimpleDuotone } from "react-icons/pi";
 import logo from "../../../public/LOGO 1.png";
 
@@ -48,7 +48,6 @@ function Navbar() {
       <div className="flex w-2/6 items-center justify-end gap-6 pr-4">
         <Link
           href="/signin"
-         
           className="w-36 rounded-lg border border-verde-loro p-2 text-center text-verde-loro duration-500 hover:bg-verde-bg"
         >
           Iniciar sesión

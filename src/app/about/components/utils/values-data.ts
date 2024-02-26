@@ -1,9 +1,9 @@
-import integridad from "../../../../../public/values/integridad.png";
 import accesibilidad from "../../../../../public/values/accesibilidad.png";
-import empatia from "../../../../../public/values/empatia.png";
 import apoyo from "../../../../../public/values/apoyo.png";
-import inclusion from "../../../../../public/values/inclusion.png";
+import empatia from "../../../../../public/values/empatia.png";
 import igualdad from "../../../../../public/values/igualdad.png";
+import inclusion from "../../../../../public/values/inclusion.png";
+import integridad from "../../../../../public/values/integridad.png";
 
 export const valuesData = [
   {

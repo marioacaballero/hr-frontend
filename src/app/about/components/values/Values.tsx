@@ -1,11 +1,10 @@
 "use client";
 
-import React from "react";
 import { For } from "million/react";
-import CardValue from "./cardValues/CardValue";
 import { valuesData } from "../utils/values-data";
+import CardValue from "./cardValues/CardValue";
 
-function Values() {
+export default function Values() {
   return (
     <div className="flex w-full flex-col items-center bg-white py-16">
       <h1 className="text-center text-4xl font-semibold">
@@ -21,5 +20,3 @@ function Values() {
     </div>
   );
 }
-
-export default Values;

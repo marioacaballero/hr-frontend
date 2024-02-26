@@ -1,5 +1,5 @@
 import React from "react";
-import { LuShare2, LuHeart, LuStar } from "react-icons/lu";
+import { LuHeart, LuShare2, LuStar } from "react-icons/lu";
 
 function ShortCard(): React.ReactElement {
   return (
@@ -9,10 +9,10 @@ function ShortCard(): React.ReactElement {
           título de la oferta laboral
         </h2>
         <div className="flex gap-10">
-          <button className="bg-verde-bg2 rounded-full p-4 text-2xl text-gray-400">
+          <button className="rounded-full bg-verde-bg2 p-4 text-2xl text-gray-400">
             <LuShare2 />
           </button>
-          <button className="bg-verde-bg2 rounded-full p-4 text-2xl text-gray-400">
+          <button className="rounded-full bg-verde-bg2 p-4 text-2xl text-gray-400">
             <LuHeart />
           </button>
         </div>
@@ -25,7 +25,7 @@ function ShortCard(): React.ReactElement {
         <button className="text-2xl">
           <LuStar />
         </button>
-        <button className="text-verde-loro border-verde-loro hover:bg-verde-bg rounded-md border px-14 py-3">
+        <button className="rounded-md border border-verde-loro px-14 py-3 text-verde-loro hover:bg-verde-bg">
           Ver más
         </button>
       </div>

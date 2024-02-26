@@ -1,16 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import {
   FaFacebook,
-  FaTwitter,
   FaInstagram,
-  FaWhatsapp,
   FaTelegramPlane,
+  FaTwitter,
+  FaWhatsapp,
 } from "react-icons/fa";
 import logo from "../../../public/LOGO 1.png";
 
-function Footer() {
+export default function Footer() {
   return (
     <footer className="flex w-full flex-col items-center justify-center gap-4 bg-gray-300 p-6">
       <div className="my-4 flex w-4/5 items-center justify-center border-b-2 border-black p-10">
@@ -51,5 +50,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;

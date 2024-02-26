@@ -1,5 +1,3 @@
-import React from "react";
-
-export default function PostPersonalInformation() {
+export default function PostInfo() {
   return <div>Acá va datos, formación, experiencia, etc para completar</div>;
 }

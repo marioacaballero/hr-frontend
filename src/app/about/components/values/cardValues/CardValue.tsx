@@ -1,7 +1,11 @@
-import Image from "next/image";
 import { CardValueProps } from "@/utils/types/about";
+import Image from "next/image";
 
-function CardValue({ logo, tittle, description }: CardValueProps) {
+export default function CardValue({
+  logo,
+  tittle,
+  description,
+}: CardValueProps) {
   return (
     <div className="mx-28 flex w-96 flex-col items-center justify-center gap-2 px-3">
       <Image alt="logo" src={logo} width={100} height={100} />
@@ -16,5 +20,3 @@ function CardValue({ logo, tittle, description }: CardValueProps) {
     </div>
   );
 }
-
-export default CardValue;

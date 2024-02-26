@@ -1,8 +1,8 @@
 "use client";
 
+import { JobFilter } from "@/utils/types/job-filters";
 import React from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { JobFilter } from "@/utils/types/job-filters";
 
 export default function JobFilters() {
   const [filters, setFilters] = React.useState<JobFilter>({

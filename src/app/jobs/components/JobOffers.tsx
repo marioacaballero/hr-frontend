@@ -1,4 +1,3 @@
-import React from "react";
 import { BsFillBellFill } from "react-icons/bs";
 import ShortCard from "./ShortCard";
 
