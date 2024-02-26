@@ -1,5 +1,4 @@
 import { ActivityArea } from "@/utils/types/admin-dashboard";
-import { For } from "million/react";
 import Link from "next/link";
 
 export default function AllActivities({
@@ -23,13 +22,11 @@ export default function AllActivities({
         </div>
         {activities.length ? (
           <ul>
-            <For each={activities}>
-              {(activity) => (
-                <li key={activity.id} className="uppercase">
-                  - {activity.name}
-                </li>
-              )}
-            </For>
+            {activities.map((activity: ActivityArea) => (
+              <li key={activity.id} className="uppercase">
+                - {activity.name}
+              </li>
+            ))}
           </ul>
         ) : (
           <p>No hay actividades registradas</p>

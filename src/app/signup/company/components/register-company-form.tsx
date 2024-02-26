@@ -14,7 +14,6 @@ import {
   phoneNumberValidation,
 } from "../../utils/validations";
 import { RegisterCompany } from "../lib/actions-create-company";
-import { For } from "million/react";
 
 type activityareas = {
   name: string;
@@ -142,13 +141,11 @@ export default function FormCompany({
               className="rounded-lg border border-gray-500 bg-white p-3"
               name="activityArea"
             >
-              <For each={activityareas}>
-                {(area) => (
-                  <option key={area.id} value={area.id}>
-                    {area.name}
-                  </option>
-                )}
-              </For>
+              {activityareas.map((area) => (
+                <option key={area.id} value={area.id}>
+                  {area.name}
+                </option>
+              ))}
             </select>
           </label>
         </div>
