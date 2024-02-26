@@ -86,21 +86,24 @@ export default function Login() {
             Olvidaste tu contraseña?
           </Link>
           <div className="flex flex-col gap-4 pl-16">
-            <label
-              className="flex gap-2"
-              onClick={() => setCheckOne({ user: true, company: false })}
-            >
-              <input type="checkbox" name="freelance" checked={checkOne.user} />
+            <label className="flex gap-2">
+              <input
+                type="checkbox"
+                name="freelance"
+                checked={checkOne.user}
+                onChange={() => setCheckOne({ user: true, company: false })}
+              />
               Ingreso como Postulante/Freelance*
             </label>
             <label
               className="flex gap-2"
-              onClick={() => setCheckOne({ user: false, company: true })}
+              onChange={() => setCheckOne({ user: false, company: true })}
             >
               <input
                 type="checkbox"
                 name="company"
                 checked={checkOne.company}
+                onChange={() => setCheckOne({ user: true, company: false })}
               />
               Ingreso como Empresa/ONG*
             </label>
