@@ -10,7 +10,7 @@ export function SubmitButton({
   type,
   displayText,
 }: {
-  type: string;
+  type?: string;
   displayText: string;
 }) {
   const { pending } = useFormStatus();
@@ -21,7 +21,7 @@ export function SubmitButton({
         type="submit"
         aria-disabled={pending}
         className="w-44 rounded-lg  border-verde-loro bg-verde-loro p-3 text-center font-semibold uppercase duration-500 hover:bg-green-300"
-        onClick={() => cuilValidationDb(type)}
+        onClick={type ? () => cuilValidationDb(type) : () => {}}
       >
         {displayText}
       </button>
