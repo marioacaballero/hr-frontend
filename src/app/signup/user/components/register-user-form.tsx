@@ -1,8 +1,11 @@
 "use client";
 
+import { dateNow } from "@/utils/constants/date";
 import Image from "next/image";
 import Link from "next/link";
 import formImage2 from "../../../../../public/formImage2.png";
+import { SubmitButton } from "../../components/submit-button";
+import { ID_TYPE } from "../../utils/enums";
 import {
   cuilValidation,
   cuilValidationDb,
@@ -13,7 +16,6 @@ import {
   phoneNumberValidation,
 } from "../../utils/validations";
 import { RegisterUser } from "../lib/actions-create";
-import { ID_TYPE } from "../../utils/enums";
 
 export default function FormUser() {
   return (
@@ -97,6 +99,7 @@ export default function FormUser() {
               name="birthdate"
               className="w-52 rounded-lg border border-gray-500 p-3"
               required
+              max={dateNow}
             />
             <span className="pt-2 text-sm">
               Solo para validar tu identidad,
@@ -241,13 +244,7 @@ export default function FormUser() {
         </div>
       </section>
       <section className="flex w-full flex-col items-center justify-center">
-        <button
-          type="submit"
-          className="w-44 rounded-lg  border-verde-loro bg-verde-loro p-3 text-center font-semibold uppercase duration-500 hover:bg-green-300"
-          onClick={() => cuilValidationDb("user")}
-        >
-          Registrate
-        </button>
+        <SubmitButton type="user" displayText={"Registrate"} />
         <div className="flex gap-2 py-10 text-gray-600">
           <span>¿Ya tienes cuenta?</span>
           <Link

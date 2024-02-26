@@ -37,7 +37,8 @@ export async function RegisterUser(user: FormData) {
 
     await apiservice.post("/auth/register-profile", newUser);
   } catch (error: any) {
-    return { message: error.issues };
+    const message = error.response.data.message.split(" :: ")[1];
+    return { message: message || "Error al crear la cuenta" };
   }
   redirect("/signin");
 }
