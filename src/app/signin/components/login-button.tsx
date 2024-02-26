@@ -17,7 +17,7 @@ export function LoginButton() {
       >
         Iniciar sesión
       </button>
-      {pending && (
+      {/* {pending && (
         <div>
           <l-ring
             size="40"
@@ -27,7 +27,7 @@ export function LoginButton() {
             color="gray"
           ></l-ring>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
