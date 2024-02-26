@@ -1,11 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
-import { LoginMember } from "../lib/action-login";
-import bridge from "../../../../public/loginImage.png";
+import Link from "next/link";
 import { MouseEvent, useState } from "react";
 import { useFormState } from "react-dom";
+import bridge from "../../../../public/loginImage.png";
+import { LoginMember } from "../lib/action-login";
+import { LoginButton } from "./login-button";
 
 const initialState = {
   message: "",
@@ -15,13 +16,16 @@ const initialState = {
 export default function Login() {
   const [seePass, setSeePass] = useState(false);
   const [state, formState] = useFormState(LoginMember, initialState);
+  const [checkOne, setCheckOne] = useState({
+    user: true,
+    company: false,
+  });
 
   const handleClick = (e: MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
     setSeePass(!seePass);
   };
 
-  console.log(state);
   return (
     <form action={formState} className="mt-1 flex bg-white">
       <section className="flex w-1/2 flex-col py-16">
@@ -83,22 +87,30 @@ export default function Login() {
           </Link>
           <div className="flex flex-col gap-4 pl-16">
             <label className="flex gap-2">
-              <input type="checkbox" name="freelance" />
+              <input
+                type="checkbox"
+                name="freelance"
+                checked={checkOne.user}
+                onChange={() => setCheckOne({ user: true, company: false })}
+              />
               Ingreso como Postulante/Freelance*
             </label>
-            <label className="flex gap-2">
-              <input type="checkbox" name="company" />
+            <label
+              className="flex gap-2"
+              onChange={() => setCheckOne({ user: false, company: true })}
+            >
+              <input
+                type="checkbox"
+                name="company"
+                checked={checkOne.company}
+                onChange={() => setCheckOne({ user: true, company: false })}
+              />
               Ingreso como Empresa/ONG*
             </label>
           </div>
         </div>
         <div className="mt-20 flex w-3/4 flex-col items-center gap-20">
-          <button
-            type="submit"
-            className="w-fit self-center rounded-md bg-verde-loro px-4 py-2 font-medium tracking-wide duration-500 hover:bg-lime-400"
-          >
-            Iniciar sesión
-          </button>
+          <LoginButton />
           <div className="flex items-center justify-center gap-2 text-xl uppercase tracking-wide text-gray-500">
             <span>No tienes cuenta?</span>
             <Link
