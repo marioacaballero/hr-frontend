@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import formImage from "../../../../../public/form.png";
+import { SubmitButton } from "../../components/submit-button";
 import {
   cuilValidation,
   cuilValidationDb,
@@ -272,14 +273,7 @@ export default function FormCompany({
         </div>
       </section>
       <section className="flex w-full flex-col items-center justify-center">
-        <button
-          type="submit"
-          className="w-44 rounded-lg  border-verde-bg2 bg-verde-bg2 p-3 text-center font-semibold uppercase duration-500 hover:bg-green-300"
-          onClick={() => cuilValidationDb("company")}
-        >
-          Crear Cuenta
-        </button>
-
+        <SubmitButton type="company" displayText="Crear Cuenta" />
         <div className="flex gap-2 py-10 text-gray-600">
           <span>¿Ya tienes cuenta?</span>
           <Link

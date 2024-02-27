@@ -37,10 +37,10 @@ export const emailValidationDb = async (profileType: string) => {
       email.setCustomValidity(
         "El email ya está registrado en la base de datos",
       );
-    } else {
-      email.setCustomValidity("");
     }
-  } catch (error) {}
+  } catch (error) {
+    email.setCustomValidity("");
+  }
 };
 
 export const cuilValidation = () => {
@@ -63,10 +63,10 @@ export const cuilValidationDb = async (profileType: string) => {
       cuil.setCustomValidity(
         "El CUIL/CUIT ya está registrado en la base de datos",
       );
-    } else {
-      cuil.setCustomValidity("");
     }
-  } catch (error) {}
+  } catch (error) {
+    cuil.setCustomValidity("");
+  }
 };
 
 export const emailValidation = async () => {
