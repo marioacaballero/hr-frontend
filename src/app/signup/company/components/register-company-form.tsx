@@ -1,5 +1,6 @@
 "use client";
 
+import { ActivityArea } from "@/utils/types/admin-dashboard";
 import Image from "next/image";
 import Link from "next/link";
 import formImage from "../../../../../public/form.png";
@@ -15,15 +16,10 @@ import {
 } from "../../utils/validations";
 import { RegisterCompany } from "../lib/actions-create-company";
 
-type activityareas = {
-  name: string;
-  id: number;
-};
-
 export default function FormCompany({
   activityareas,
 }: {
-  activityareas: activityareas[];
+  activityareas: ActivityArea[];
 }) {
   return (
     <form action={RegisterCompany} className="relative mt-1 bg-white p-16">
