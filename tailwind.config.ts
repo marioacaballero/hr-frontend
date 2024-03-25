@@ -15,9 +15,12 @@ const config: Config = {
       },
       colors: {
         "verde-loro": "#B8CF37",
+        "verde-loro-50": "#b8cf378c",
         "verde-bg": "#b8cf3726",
         "verde-bg2": "#d7e6b282",
+        "verde-bg3": "#b6cf3726",
         "verde-linea": "#16A76E",
+        "verde-linea-15": "#16A76E26",
         "azul-text": "#074546",
         "about-bg": "#ffd36180",
       },
