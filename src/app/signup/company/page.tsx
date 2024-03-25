@@ -1,13 +1,7 @@
 import { apiservice } from "@/utils/service-api";
+import { response } from "@/utils/types/response";
 import FormCompany from "./components/register-company-form";
 
-type response = {
-  id: number;
-  createdAt: string;
-  updatedAt: string;
-  isActive: boolean;
-  name: string;
-};
 export default async function CompanyRegister() {
   const res = await apiservice.get("/activity-area");
   const activityareas = res.data.message

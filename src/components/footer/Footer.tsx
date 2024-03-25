@@ -23,7 +23,7 @@ function Footer() {
         />
       </div>
       <section className="flex gap-12 py-4 text-xl font-medium">
-        <Link href="/">¿Quiénes Somos?</Link>
+        <Link href="/about">¿Quiénes Somos?</Link>
         <Link href="/">Busca empleo</Link>
         <Link href="/">Contáctanos</Link>
         <Link href="/">Testimonios</Link>
